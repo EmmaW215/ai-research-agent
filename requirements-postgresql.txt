@@ -1,0 +1,11 @@
+# PostgreSQL dependencies (optional)
+# Only install if you need PostgreSQL support
+# Default database is SQLite, which doesn't require these packages
+
+psycopg2-binary>=2.9.9
+
+# For Python 3.14+, you may need to install PostgreSQL development libraries first:
+# macOS: brew install postgresql
+# Ubuntu/Debian: sudo apt-get install libpq-dev
+# Then install: pip install psycopg2-binary
+
