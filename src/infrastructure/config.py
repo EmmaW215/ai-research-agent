@@ -30,6 +30,25 @@ class Settings(BaseSettings):
     chroma_persist_directory: str = "./chroma_db"
     chroma_collection_name: str = "research_documents"
     
+    # File Upload Settings
+    max_upload_size: int = 52428800  # 50MB
+    allowed_file_types: str = "application/pdf"
+    upload_directory: str = "./uploads"
+    
+    # PDF Processing
+    pdf_extract_images: bool = False
+    pdf_extract_tables: bool = True
+    
+    # Chunking Settings
+    default_chunk_size: int = 512
+    default_chunk_overlap: int = 50
+    chunking_strategy: str = "recursive"
+    
+    # Embedding Settings
+    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    embedding_batch_size: int = 32
+    embedding_device: str = "cpu"
+
     # Logging
     log_level: str = "INFO"
     log_format: str = "json"

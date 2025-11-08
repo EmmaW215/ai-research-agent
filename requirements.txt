@@ -1,8 +1,8 @@
 # Core Framework
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
-pydantic==2.5.0
-pydantic-settings==2.1.0
+pydantic==2.8.0
+pydantic-settings==2.3.0
 email-validator>=2.0.0  # Required for pydantic EmailStr validation
 
 # Database
@@ -11,7 +11,7 @@ alembic==1.13.0
 # psycopg2-binary==2.9.9  # Optional: Only needed for PostgreSQL. Default uses SQLite.
 
 # Vector Store
-# Note: chromadb requires Python <3.14 and numpy<2.0
+# Note: chromadb requires Python <3.14.
 # For Python 3.11-3.13: chromadb>=0.4.22
 # For Python 3.14+: Keep commented out or install separately
 numpy<2.0  # Required for chromadb compatibility
@@ -30,3 +30,24 @@ httpx==0.25.2
 
 # Utilities
 python-dotenv==1.0.0
+
+# ===== Batch 2 Additions =====
+# PDF Processing
+pymupdf==1.23.8
+pdfplumber==0.10.3
+
+# Text Processing
+langchain==0.1.20
+langchain-text-splitters==0.0.1
+langchain-community==0.0.38
+langsmith==0.1.65
+spacy==3.7.5
+
+# Embeddings
+sentence-transformers==2.2.2
+torch==2.4.1  # PyTorch 2.4+ supports Python 3.12
+huggingface-hub==0.19.4  # Ensure cached_download API used by sentence-transformers is available
+
+# File Utilities
+aiofiles==23.2.1
+python-magic==0.4.27

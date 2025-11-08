@@ -11,6 +11,7 @@ from src.infrastructure.config import get_settings
 from src.infrastructure.database import init_db
 from src.infrastructure.logging import setup_logging, get_logger
 from src.api.routes import auth, health
+from src.api.routes import documents
 
 settings = get_settings()
 logger = get_logger(__name__)
@@ -82,6 +83,7 @@ async def log_requests(request: Request, call_next):
     )
     
     response.headers["X-Correlation-ID"] = correlation_id
+    app.include_router(documents.router, prefix="/api/v1/documents", tags=["Documents"])
     
     return response
 
